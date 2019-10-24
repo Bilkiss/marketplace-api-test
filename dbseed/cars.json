@@ -1,0 +1,27 @@
+[
+    {
+        "ref":"26411",
+        "name":"Mitsubishi ASX",
+        "body_type": "SUV",
+        "engine": "1590cc",
+        "mileage": "N/A",
+        "fuel_type": "Petrol",
+        "transmission": "Manual",
+        "door_count": "5",
+        "image_car": "https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/image/iol/2018/09/07/16937570/IOLmot16aug18_ASX_b-1.jpg",
+        "price": 1085000
+    },
+    {
+        "ref":"26416",
+        "name":"Mitsubishi Attrage",
+        "body_type": "Sedan",
+        "engine": "1193 cc",
+        "mileage": "N/A",
+        "fuel_type": "N/A ",
+        "transmission": "Automatic, Manual",
+        "door_count": "5",
+        "image_car": "https://www.cyclecarriage.com/sg/-/media/jccl/mit/images/car-models/attrage/design-images/feature_single_exterior-design_02_desktop_1440x1440.jpg",
+        "price": 725000
+    }
+
+]
