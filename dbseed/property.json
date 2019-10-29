@@ -1,0 +1,27 @@
+[
+    {
+        "ref":"26411",
+        "slug": "Property-in-Port-Louis",
+        "name":"Property in Port Louis",
+        "price": 1085000,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!",
+        "date_online": "2019-10-01",
+        "date_offline": "2019-12-01",
+        "currency": "MUR",
+        "contact_phone": "7697757656",
+        "contact_email": "info@yahoo.fr"
+    },
+    {
+        "ref":"26416",
+        "slug": "3-Bed-Semi-For-Rent",
+        "name":"3 Bed Semi For Rent",
+        "price": 725000,
+        "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!",
+        "date_online":  "2019-10-01",
+        "date_offline":  "2019-12-01",
+        "currency":  "MUR",
+        "contact_phone":  "67554234",
+        "contact_email":  "mit@hotmail.com"
+    }
+
+]

@@ -15,6 +15,7 @@ const passport = require('passport');
 const dbconfig = require('./config/database');
 
 const CarsRoute = require('./routes/cars');
+const PropertiesRoute = require('./routes/properties');
 const UsersRoute = require('./routes/users');
 
 
@@ -43,6 +44,7 @@ app.use(express.static('static'));
 app.use(passport.initialize());
 
 app.use('/api/car', CarsRoute);
+app.use('/api/property', PropertiesRoute);
 app.use('/api/user', UsersRoute);
 
 

@@ -11,6 +11,30 @@ var CarsSchema = new Schema({
     type: String,
     required: true
   },
+  slug: {
+    type: String
+  },
+  desc_excerpt: {
+    type: String
+  },
+  description: {
+    type: String
+  },
+  date_online: {
+    type: String
+  },
+  date_offline: {
+    type: String
+  },
+  currency: {
+    type: String
+  },
+  contact_phone: {
+    type: String
+  },
+  contact_email: {
+    type: String
+  },
   body_type: {
     type: String,
     unique: false,

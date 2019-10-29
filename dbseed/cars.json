@@ -1,6 +1,7 @@
 [
     {
         "ref":"26411",
+        "slug": "Mitsubishi-ASX",
         "name":"Mitsubishi ASX",
         "body_type": "SUV",
         "engine": "1590cc",
@@ -9,10 +10,17 @@
         "transmission": "Manual",
         "door_count": "5",
         "image_car": "https://inm-baobab-prod-eu-west-1.s3.amazonaws.com/public/inm/media/image/iol/2018/09/07/16937570/IOLmot16aug18_ASX_b-1.jpg",
-        "price": 1085000
+        "price": 1085000,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!",
+        "date_online": "2019-10-01",
+        "date_offline": "2019-12-01",
+        "currency": "MUR",
+        "contact_phone": "7697757656",
+        "contact_email": "info@yahoo.fr"
     },
     {
         "ref":"26416",
+        "slug": "Mitsubishi-Attrage",
         "name":"Mitsubishi Attrage",
         "body_type": "Sedan",
         "engine": "1193 cc",
@@ -21,7 +29,13 @@
         "transmission": "Automatic, Manual",
         "door_count": "5",
         "image_car": "https://www.cyclecarriage.com/sg/-/media/jccl/mit/images/car-models/attrage/design-images/feature_single_exterior-design_02_desktop_1440x1440.jpg",
-        "price": 725000
+        "price": 725000,
+        "description":  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla!",
+        "date_online":  "2019-10-01",
+        "date_offline":  "2019-12-01",
+        "currency":  "MUR",
+        "contact_phone":  "67554234",
+        "contact_email":  "mit@hotmail.com"
     }
 
 ]

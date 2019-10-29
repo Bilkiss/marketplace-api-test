@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var fs = require("fs");
 var cloudinary = require("cloudinary");
-var Car = require("../models/car");
+var Property = require("../models/property");
 
 
 cloudinary.config({
@@ -14,44 +14,40 @@ cloudinary.config({
     api_secret: '<apisecret>'
 });
 
-//car list
+// Property list
 router.get("/list", function (req, res) {
 
-    Car.find().lean().exec(function (err, carlist) {
-    // console.log("carlist : ", carlist);
+    Property.find().lean().exec(function (err, propertylist) {
+    // console.log("propertylist : ", propertylist);
     if (err) return res.status(400).json({
       sucess: false,
       message: err
     });
     return res.status(200).json({
       success: true,
-      data: carlist
+      data: propertylist
     });
   });
 
 });
 
 
+// Add a property
+router.post("/add-property", async function (req, res) {
 
-// Add a car
-router.post("/add-car", async function (req, res) {
-
-    let exist = await Car.find({
+    let exist = await Property.find({
         "ref": req.body.ref
     }).lean().exec();
 
     if (exist.length > 0) {
         return res.status(400).json({
-            error: "Car ref already exists"
+            error: "Property ref already exists"
         });
     }
 
-    let carDetails = new Car(req.body);
-    let carname = req.body.name;
-    let carslug = carname.split(' ').join('-');
-    carDetails.slug = carslug;
-    console.log("carDetails is", carDetails);
-    carDetails.save(err => {
+    let propertyDetails = new Property(req.body);
+    console.log("propertyDetails is", propertyDetails);
+    propertyDetails.save(err => {
         if (err) {
             return res.status(400).json({
                 error: err
@@ -66,8 +62,6 @@ router.post("/add-car", async function (req, res) {
 
 // Upload image
 router.post('/img-upload', function (req, res, next) {
-    // console.log('img-upload req: ', req);
-    console.log('img-upload req.files: ', req.files);
     if (Object.keys(req.files).length == 0) {
         return res.status(400).send('No files were uploaded.');
     }
@@ -101,33 +95,37 @@ router.post('/img-upload', function (req, res, next) {
 
 });
 
-//car by slug
+// Property by slug
 router.get("/:slug", async (req, res) => {
-    let cars = await Car.find({
-        slug: req.params.slug
-    }).lean().exec();
+  let properties = await Property.find({
+    slug: req.params.slug
+  }).lean().exec();
 
-    if (cars.length) {
-        let car = cars[0];
+  if (properties.length) {
+    let property = properties[0];
 
-        console.log('car.slug: ', car.slug);
+    console.log('property.slug: ', property.slug);
 
-        return res.status(200).json(car);
-    }
+    return res.status(200).json(property);
+  }
 
-    return res.status(404).json({
-        message: "Car not found"
-    });
+  return res.status(404).json({
+    message: "Property not found"
+  });
 
 });
 
-// Seed car from car.json
+
+
+
+// Seed property from property.json
 router.get("/put/seed", function (req, res) {
-    let cats = fs.readFileSync("dbseed/cars.json", "utf8");
+    console.log('in seed property');
+    let cats = fs.readFileSync("dbseed/property.json", "utf8");
     cats = JSON.parse(cats);
 
 
-    Car.collection.insert(cats, function (err, docs) {
+    Property.collection.insert(cats, function (err, docs) {
         if (err) return console.log(err);
         res.end();
 
